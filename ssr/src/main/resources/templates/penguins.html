@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${species}"></title>
+</head>
+<body>
+<h1 th:text="${species}"></h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="penguin : ${penguins}">
+        <td th:text="${penguin.id}"></td>
+        <td th:text="${penguin.name}"></td>
+    </tr>
+</table>
+</body>
+</html>

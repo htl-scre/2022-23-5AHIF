@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Penguins</title>
+</head>
+<body>
+<h2>All Penguins</h2>
+<ul>
+<li th:each="penguin : ${penguins}">
+    <span th:text="${penguin.name}"></span>
+</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Penguin</title>
+</head>
+<body>
+<form action="add-penguin" method="post" th:object="${newPenguin}">
+
+    <div>
+        <label th:for="*{name}">Name:</label>
+        <input th:field="*{name}">
+        <span th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"/>
+    </div>
+
+    <div>
+        <label th:for="*{weightInKg}">Weight:</label>
+        <input type="number" th:field="*{weightInKg}">
+        <span th:if="${#fields.hasErrors('weightInKg')}"
+              th:errors="*{weightInKg}"/>
+    </div>
+
+    <div>
+        <label th:for="${newPenguin.species}">Species:</label>
+        <select th:field="${newPenguin.species}">
+            <option th:each="s: ${species}"
+                    th:text="${s.name}"
+                    th:value="${s.name}">
+        </select>
+    </div>
+
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

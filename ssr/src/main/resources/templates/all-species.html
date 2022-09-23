@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Species</title>
+</head>
+<body>
+<h1>Penguin Species</h1>
+<ul>
+    <li th:each="s : ${species}">
+        <a th:text="${s.name}"
+        th:href="@{penguins/{species} (species = ${s.name})}"></a>
+    </li>
+</ul>
+</body>
+</html>
