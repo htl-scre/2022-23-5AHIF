@@ -36,7 +36,7 @@ public record PenguinController(PenguinRepository penguinRepository, SpeciesRepo
     @GetMapping("new")
     public String getNewPenguinForm(Model model) {
         if (!model.containsAttribute("newPenguin"))
-            model.addAttribute("newPenguin", new Penguin());
+            model.addAttribute("newPenguin", new Penguin());    // besser Klassenname
         model.addAttribute("species", speciesRepository.findAll());
         return "new-penguin";
     }
